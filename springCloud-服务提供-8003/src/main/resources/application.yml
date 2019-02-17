@@ -1,0 +1,20 @@
+## 配置服务端口
+server:
+  port: 8003
+## 配置此应用的应用名
+spring:
+  application:
+    name: springCloud-provider
+## 配置连接Eureka服务端的若干信息
+eureka:
+  client:
+    service-url:
+      defaultZone: http://127.0.0.1:9527/eureka #Eureka服务端的访问地址
+  instance:
+    instance-id: provider-8003 #配置此应用注册到Eureka服务端的实例名称
+    prefer-ip-address: true #允许使用本机IP地址作为服务注册的标识
+## 使用info结合springBoot的监管模块，可以向外部简单介绍本应用的情况
+info:
+  name: springCloud-provider-8003
+  desc: 在8003端口暴露出服务
+  company: com.sym
