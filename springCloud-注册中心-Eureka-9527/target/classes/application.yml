@@ -1,0 +1,10 @@
+server:
+  port: 7777
+eureka:
+  instance:
+    hostname: local-Eureka-Server #代表本实例的主机名
+  client:
+    register-with-eureka: false # 表示此实例是否应将其信息注册到eureka服务器以供其它实例发现
+    fetch-registry: false # 指示此客户端是否应从eureka服务器获取eureka注册表信息
+    service-url:
+      defaultZone: http://127.0.0.1:8671/eureka #配置Eureka服务端的访问地址

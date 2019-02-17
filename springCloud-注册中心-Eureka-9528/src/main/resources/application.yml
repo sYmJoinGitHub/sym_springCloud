@@ -1,0 +1,14 @@
+## 配置本EurekaServer注册中心的启动端口:9528
+server:
+  port: 9528
+## EurekaServer的其它配置
+eureka:
+  instance:
+    hostname: server9528 #代表本实例的主机名
+  client:
+    register-with-eureka: false #表示此实例是否应将其信息注册到eureka服务器以供其它实例发现（用作注册中心的Eureka实例是不需要将自己注册上去的）
+    fetch-registry: false # 表示此实例是否应从eureka服务器获取eureka注册表信息
+    service-url:
+      defaultZone: http://127.0.0.1:9527/eureka #将本实例注册到其它EurekaServer节点，以便搭建EurekaServer集群
+
+
