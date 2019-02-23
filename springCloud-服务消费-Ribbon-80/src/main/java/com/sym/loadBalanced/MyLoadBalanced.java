@@ -39,7 +39,7 @@ public class MyLoadBalanced extends AbstractLoadBalancerRule{
         if( loadBalancer == null ){
             return null;
         }
-        // 可用服务列表
+        // 总的服务列表
         List<Server> reachableServers = loadBalancer.getAllServers();
         int size = reachableServers.size();
 
@@ -86,7 +86,7 @@ public class MyLoadBalanced extends AbstractLoadBalancerRule{
             int currentVal = index.get();
             int nextVal = (currentVal+1)%all;
             if( index.compareAndSet(currentVal,nextVal) ){
-                count.compareAndSet(count.get(),1);
+                count.set(1);
                 return index.get();
             }
         }
