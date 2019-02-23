@@ -1,6 +1,7 @@
 package com.sym.controller;
 
 import com.sym.entity.UserBean;
+import com.sym.service.UserServiceI;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -11,8 +12,7 @@ import org.springframework.web.client.RestTemplate;
 import java.util.List;
 
 /**
- * springCloud的服务调用是基于HTTP的REST调用，所以服务消费方使用
- * RestTemplate来调用远程服务
+ * springCloud的服务调用可以使用Feign来实现，只需要一个接口和一个@FeignClient注解即可
  *
  * Created by 沈燕明 on 2019/1/20.
  */
@@ -20,11 +20,8 @@ import java.util.List;
 @RequestMapping("consumer")
 public class ConsumerController {
 
-    @Value("${serviceName}")
-    private String serviceName;
-
     @Autowired
-    private RestTemplate restTemplate;
+    private UserServiceI userServiceI;
 
     /**
      * 调用远程服务，获取当个用户的信息
@@ -34,8 +31,7 @@ public class ConsumerController {
      */
     @RequestMapping("get/{id}")
     public UserBean getOne(@PathVariable("id")int userId) throws Exception{
-        String url = "http://"+serviceName+"/provider/user/get/"+userId;
-        return restTemplate.getForObject(url,UserBean.class);
+        return userServiceI.getUserById(userId);
     }
 
     /**
@@ -44,10 +40,8 @@ public class ConsumerController {
      * @throws Exception
      */
     @RequestMapping("list")
-    @SuppressWarnings("unchecked")
     public List<UserBean> getList() throws Exception{
-        String url = "http://"+serviceName+"/provider/user/list";
-        return restTemplate.getForObject(url,List.class);
+        return userServiceI.getUserList();
     }
 
 
