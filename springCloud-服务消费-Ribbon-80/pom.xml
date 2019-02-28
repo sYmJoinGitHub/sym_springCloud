@@ -48,6 +48,12 @@
 			<artifactId>spring-cloud-starter-eureka</artifactId>
 		</dependency>
 
+        <!-- 断路器Hystrix -->
+        <dependency>
+			<groupId>org.springframework.cloud</groupId>
+			<artifactId>spring-cloud-starter-hystrix</artifactId>
+		</dependency>
+
         <!-- springBoot的web模块 -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
