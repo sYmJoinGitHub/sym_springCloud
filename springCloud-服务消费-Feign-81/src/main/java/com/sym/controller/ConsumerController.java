@@ -44,6 +44,15 @@ public class ConsumerController {
         return userServiceI.getUserList();
     }
 
+    /**
+     * hystrix熔断器
+     * @return
+     */
+    @RequestMapping("error")
+    public UserBean error(){
+        return userServiceI.error();
+    }
+
 
 
 

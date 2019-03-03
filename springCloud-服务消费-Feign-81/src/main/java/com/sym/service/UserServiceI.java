@@ -20,5 +20,6 @@ public interface UserServiceI {
     @RequestMapping("list")
     List<UserBean> getUserList();
 
-
+    @RequestMapping("error")
+    UserBean error();
 }

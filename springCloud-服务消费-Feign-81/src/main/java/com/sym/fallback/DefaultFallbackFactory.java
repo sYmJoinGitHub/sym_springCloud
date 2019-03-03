@@ -24,6 +24,11 @@ public class DefaultFallbackFactory  implements FallbackFactory<UserServiceI> {
             public List<UserBean> getUserList() {
                 return null;
             }
+
+            @Override
+            public UserBean error() {
+                return new UserBean(1,"error","error","出错了~");
+            }
         };
     }
 }
