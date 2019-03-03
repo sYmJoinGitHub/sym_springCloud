@@ -58,8 +58,7 @@ public class UserController {
      */
     @RequestMapping("error")
     public UserBean error() throws Exception{
-        //throw new RuntimeException("服务提供-8001-抛出异常");
-        return new UserBean(1,"test","test","8001");
+        throw new RuntimeException("服务提供-8001-抛出异常");
     }
 
     /**

@@ -53,6 +53,16 @@ public class UserController {
     }
 
     /**
+     * 服务提供方抛出异常，供消费者测试服务熔断
+     * @return
+     * @throws Exception
+     */
+    @RequestMapping("error")
+    public UserBean error() throws Exception{
+        throw new RuntimeException("服务提供-8003-抛出异常");
+    }
+
+    /**
      * 服务发现功能，了解下有这个功能即可
      * 提供提供方的服务功能信息
      *
