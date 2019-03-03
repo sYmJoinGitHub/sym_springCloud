@@ -59,7 +59,7 @@ public class ConsumerController {
     @RequestMapping("error")
     @HystrixCommand(fallbackMethod = "fallbackForError")
     public UserBean error() throws Exception{
-        String url = "http://"+serviceName+"/provider/user/list";
+        String url = "http://"+serviceName+"/provider/user/error";
         return restTemplate.getForObject(url,UserBean.class);
     }
 

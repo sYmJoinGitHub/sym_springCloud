@@ -5,12 +5,12 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>com.sym</groupId>
-    <artifactId>springCloud-consumer</artifactId>
+    <artifactId>springCloud-hystrix-dashboard</artifactId>
     <version>1.0-SNAPSHOT</version>
     <packaging>jar</packaging>
 
-    <name>springCloud服务消费方-80</name>
-    <description>springCloud的服务消费方</description>
+    <name>springCloud监控器</name>
+    <description>使用hystrix-dashboard作为服务监控</description>
 
     <!-- 配置springBoot的父依赖 -->
     <parent>
@@ -41,42 +41,22 @@
 	</dependencyManagement>
 
     <dependencies>
-
-        <!-- Eureka客户端 -->
-        <dependency>
-			<groupId>org.springframework.cloud</groupId>
-			<artifactId>spring-cloud-starter-eureka</artifactId>
-		</dependency>
-
         <!-- 断路器Hystrix -->
         <dependency>
 			<groupId>org.springframework.cloud</groupId>
 			<artifactId>spring-cloud-starter-hystrix</artifactId>
 		</dependency>
 
+        <!-- 服务监控hystrix-dashboard -->
+        <dependency>
+			<groupId>org.springframework.cloud</groupId>
+			<artifactId>spring-cloud-starter-hystrix-dashboard</artifactId>
+		</dependency>
+
         <!-- springBoot的web模块 -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
-        </dependency>
-
-        <!-- springBoot的测试模块 -->
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-test</artifactId>
-        </dependency>
-
-        <!-- springBoot的监管模块 -->
-        <dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-actuator</artifactId>
-		</dependency>
-
-        <!-- 公共接口 -->
-        <dependency>
-            <groupId>com.sym</groupId>
-            <artifactId>springCloud-common-api</artifactId>
-            <version>1.0-SNAPSHOT</version>
         </dependency>
 
     </dependencies>

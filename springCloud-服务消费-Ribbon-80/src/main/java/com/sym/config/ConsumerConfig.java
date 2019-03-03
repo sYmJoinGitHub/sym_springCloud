@@ -35,6 +35,6 @@ public class ConsumerConfig {
         // 轮询策略 --- RoundRobinRule()
         // 随机策略 --- RandomRule()
         // 自定义策略 --- MyLoadBalanced()
-        return new MyLoadBalanced();
+        return new RoundRobinRule();
     }
 }
