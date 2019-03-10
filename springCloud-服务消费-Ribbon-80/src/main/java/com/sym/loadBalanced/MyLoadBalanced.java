@@ -80,6 +80,9 @@ public class MyLoadBalanced extends AbstractLoadBalancerRule{
         for(;;){
             if( count.get() < 5 ){
                 count.getAndIncrement();// count要+1
+                if( count.get() > 5 ){
+                    continue;
+                }
                 return index.get();
             }
             // 如果count大于等于6，则需要切换下一个Server
