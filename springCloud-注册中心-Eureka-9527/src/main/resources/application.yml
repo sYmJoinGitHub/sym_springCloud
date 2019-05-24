@@ -8,5 +8,5 @@ eureka:
   client:
     register-with-eureka: false # 表示此实例是否应将其信息注册到eureka服务器以供其它实例发现
     fetch-registry: false # 表示此实例是否应从eureka服务器获取eureka注册表信息
-    #service-url: #搭建Eureka Server集群时使用service-url将本实例注册到其它EurekaServer节点，以便搭建EurekaServer集群
-      #defaultZone: http://127.0.0.1:9528/eureka
+    service-url: #搭建Eureka Server集群时使用service-url将本实例注册到其它EurekaServer节点，以便搭建EurekaServer集群
+      defaultZone: http://127.0.0.1:9527/eureka

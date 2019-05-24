@@ -1,0 +1,18 @@
+## bootstrap.yml具有最高优先级的加载所需且它的配置不会被覆盖掉，
+## 使用它来配置spring cloud config
+spring:
+  cloud:
+    config:
+      name: application-client #指定要从github上读取的配置文件名称，注意不加后缀
+      profile: dev #指定读取配置文件内的哪个配置项(即profile)
+      label: master #指定要读取github上的哪个分支
+      uri: http://127.0.0.1:10086 # ！！！config-server的访问地址 ！！！
+  ## 配置rabbitMQ,以便可以在消息总线接收消息，实时更新配置
+  rabbitmq:
+    host: 127.0.0.1
+    port: 5672
+    username: guest
+    password: guest
+#management:
+#  security:
+#    enabled: false

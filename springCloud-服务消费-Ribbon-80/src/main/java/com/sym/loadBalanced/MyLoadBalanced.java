@@ -47,7 +47,7 @@ public class MyLoadBalanced extends AbstractLoadBalancerRule{
             throw new RuntimeException("没有可用的服务");
         }
 
-        // 为了防止无线循环
+        // 为了防止无限循环
         int temp = 0;
 
         while( server == null && temp++ < 10){

@@ -9,8 +9,8 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
  * Created by 沈燕明 on 2019/3/9.
  */
 @SpringBootApplication
-public class ConfigClient {
+public class ConfigClientApp10000 {
     public static void main(String[] args) {
-        SpringApplication.run(ConfigClient.class, args);
+        SpringApplication.run(ConfigClientApp10000.class, args);
     }
 }
