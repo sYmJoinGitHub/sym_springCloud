@@ -12,8 +12,8 @@ spring:
           ## github上存放配置文件的仓库SSH地址
           ##uri: git@github.com:sYmJoinGitHub/springcloud-config.git
           uri: https://github.com/sYmJoinGitHub/springcloud-config.git
-          username: sym542569199@gmail.com
-          password: sYm*6292987461
+          username:
+          password:
     ## 开启记录消息总线bus的消息传播过程
     bus:
       trace:
