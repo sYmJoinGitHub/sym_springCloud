@@ -13,7 +13,7 @@ import java.util.List;
 
 /**
  * springCloud的服务调用可以使用Feign来实现，只需要一个接口和一个@FeignClient注解即可
- *
+ * <p>
  * Created by 沈燕明 on 2019/1/20.
  */
 @RestController()
@@ -25,36 +25,36 @@ public class ConsumerController {
 
     /**
      * 调用远程服务，获取当个用户的信息
+     *
      * @param userId
      * @return
      * @throws Exception
      */
     @RequestMapping("get/{id}")
-    public UserBean getOne(@PathVariable("id")int userId) throws Exception{
+    public UserBean getOne(@PathVariable("id") int userId) throws Exception {
         return userServiceI.getUserById(userId);
     }
 
     /**
      * 调用远程服务，获取全部的用户信息
+     *
      * @return
      * @throws Exception
      */
     @RequestMapping("list")
-    public List<UserBean> getList() throws Exception{
+    public List<UserBean> getList() throws Exception {
         return userServiceI.getUserList();
     }
 
     /**
      * hystrix熔断器
+     *
      * @return
      */
     @RequestMapping("error")
-    public UserBean error(){
+    public UserBean error() {
         return userServiceI.error();
     }
-
-
-
 
 
 }

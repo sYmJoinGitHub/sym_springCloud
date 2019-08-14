@@ -12,7 +12,7 @@ import org.springframework.stereotype.Component;
  * 2.routing，此过滤器将请求路由到微服务
  * 3.post，此过滤器在路由到微服务之后被调用
  * 4.error，前3个过滤器发生错误时执行此过滤器
- *
+ * <p>
  * Created by 沈燕明 on 2019/3/12.
  */
 @Component
@@ -53,6 +53,7 @@ public class RouteFilter extends ZuulFilter {
 
     /**
      * 过滤器执行的逻辑
+     *
      * @return
      * @throws ZuulException
      */

@@ -14,7 +14,7 @@ import java.util.List;
 /**
  * springCloud的服务调用是基于HTTP的REST调用，所以服务消费方使用
  * RestTemplate来调用远程服务
- *
+ * <p>
  * Created by 沈燕明 on 2019/1/20.
  */
 @RestController()
@@ -29,46 +29,46 @@ public class ConsumerController {
 
     /**
      * 调用远程服务，获取当个用户的信息
+     *
      * @param userId
      * @return
      * @throws Exception
      */
     @RequestMapping("get/{id}")
-    public UserBean getOne(@PathVariable("id")int userId) throws Exception{
-        String url = "http://"+serviceName+"/provider/user/get/"+userId;
-        return restTemplate.getForObject(url,UserBean.class);
+    public UserBean getOne(@PathVariable("id") int userId) throws Exception {
+        String url = "http://" + serviceName + "/provider/user/get/" + userId;
+        return restTemplate.getForObject(url, UserBean.class);
     }
 
     /**
      * 调用远程服务，获取全部的用户信息
+     *
      * @return
      * @throws Exception
      */
     @RequestMapping("list")
     @SuppressWarnings("unchecked")
-    public List<UserBean> getList() throws Exception{
-        String url = "http://"+serviceName+"/provider/user/list";
-        return restTemplate.getForObject(url,List.class);
+    public List<UserBean> getList() throws Exception {
+        String url = "http://" + serviceName + "/provider/user/list";
+        return restTemplate.getForObject(url, List.class);
     }
 
     /**
      * 调用远程服务抛异常的方法
+     *
      * @return
      * @throws Exception
      */
     @RequestMapping("error")
     @HystrixCommand(fallbackMethod = "fallbackForError")
-    public UserBean error() throws Exception{
-        String url = "http://"+serviceName+"/provider/user/error";
-        return restTemplate.getForObject(url,UserBean.class);
+    public UserBean error() throws Exception {
+        String url = "http://" + serviceName + "/provider/user/error";
+        return restTemplate.getForObject(url, UserBean.class);
     }
 
-    private UserBean fallbackForError(){
-        return new UserBean(1,"default","default","出错了");
+    private UserBean fallbackForError() {
+        return new UserBean(1, "default", "default", "出错了");
     }
-
-
-
 
 
 }

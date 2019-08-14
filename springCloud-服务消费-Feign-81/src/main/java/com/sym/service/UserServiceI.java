@@ -11,7 +11,7 @@ import java.util.List;
 /**
  * Created by 沈燕明 on 2019/1/16.
  */
-@FeignClient(name="${serviceName}",path = "provider/user",fallbackFactory = DefaultFallbackFactory.class)
+@FeignClient(name = "${serviceName}", path = "provider/user", fallbackFactory = DefaultFallbackFactory.class)
 public interface UserServiceI {
 
     @RequestMapping("get/{id}")

@@ -54,11 +54,12 @@ public class UserController {
 
     /**
      * 服务提供方抛出异常，供消费者测试服务熔断
+     *
      * @return
      * @throws Exception
      */
     @RequestMapping("error")
-    public UserBean error() throws Exception{
+    public UserBean error() throws Exception {
         throw new RuntimeException("服务提供-8002-抛出异常");
     }
 

@@ -16,7 +16,7 @@ import java.util.Map;
  */
 @RestController
 //@RefreshScope 借助springBoot-actuator手动刷新配置
-@PropertySource(value="classpath:db.properties")
+@PropertySource(value = "classpath:db.properties")
 public class ConfigClientController {
 
     @Value("${spring.application.name}")
@@ -33,28 +33,30 @@ public class ConfigClientController {
 
     /**
      * 访问此url，看看这个工程读取的是哪个配置
+     *
      * @return
      * @throws Exception
      */
     @GetMapping("config")
-    public Map rest() throws Exception{
-        System.out.println("启动的配置为："+applicationName+"\t"+port+"\t"+instanceId);
-        Map<String,Object> map = new HashMap<>();
-        map.put("applicationName",applicationName);
-        map.put("port",port);
-        map.put("instanceId",instanceId);
+    public Map rest() throws Exception {
+        System.out.println("启动的配置为：" + applicationName + "\t" + port + "\t" + instanceId);
+        Map<String, Object> map = new HashMap<>();
+        map.put("applicationName", applicationName);
+        map.put("port", port);
+        map.put("instanceId", instanceId);
         return map;
     }
 
     /**
      * Environment可以获取springBoot当前的一些配置
+     *
      * @param key
      * @return
      * @throws Exception
      */
     @GetMapping("getProp")
-    public String getProp(String key) throws Exception{
+    public String getProp(String key) throws Exception {
         String property = env.getProperty(key);
-        return property == null?"获取不到":property;
+        return property == null ? "获取不到" : property;
     }
 }

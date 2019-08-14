@@ -50,7 +50,7 @@ public class MyPropertySourceLoader implements PropertySourceLoader {
                     // 如果开启了 InputStreamReader，我们直接关闭它会连带关闭 InputStream
                     if (null != isr) {
                         isr.close();
-                    }else{
+                    } else {
                         // 否则我们需要手动关闭InputStream
                         is.close();
                     }

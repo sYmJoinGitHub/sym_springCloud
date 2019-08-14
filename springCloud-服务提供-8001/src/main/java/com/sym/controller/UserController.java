@@ -8,6 +8,7 @@ import org.springframework.cloud.client.discovery.DiscoveryClient;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+
 import java.util.List;
 
 /**
@@ -53,11 +54,12 @@ public class UserController {
 
     /**
      * 服务提供方抛出异常，供消费者测试服务熔断
+     *
      * @return
      * @throws Exception
      */
     @RequestMapping("error")
-    public UserBean error() throws Exception{
+    public UserBean error() throws Exception {
         throw new RuntimeException("服务提供-8001-抛出异常");
     }
 

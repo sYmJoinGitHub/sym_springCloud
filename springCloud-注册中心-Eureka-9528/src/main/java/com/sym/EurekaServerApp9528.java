@@ -6,7 +6,7 @@ import org.springframework.cloud.netflix.eureka.server.EnableEurekaServer;
 
 /**
  * EurekaServer集群节点，端口9528
- *
+ * <p>
  * Created by 沈燕明 on 2019/1/21.
  */
 @SpringBootApplication
