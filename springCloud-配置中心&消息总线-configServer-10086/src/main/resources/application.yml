@@ -10,8 +10,8 @@ spring:
       server:
         git:
           ## github上存放配置文件的仓库SSH地址
-          ##uri: git@github.com:sYmJoinGitHub/springcloud-config.git
-          uri: https://github.com/sYmJoinGitHub/springcloud-config.git
+          ##uri: git@github.com:sYmJoinGitHub/sym_springcloud-config.git
+          uri: https://github.com/sYmJoinGitHub/sym_springcloud-config.git
           username:
           password:
     ## 开启记录消息总线bus的消息传播过程
