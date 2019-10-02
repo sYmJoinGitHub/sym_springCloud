@@ -5,6 +5,7 @@ import com.sym.service.UserServiceI;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cloud.client.ServiceInstance;
 import org.springframework.cloud.client.discovery.DiscoveryClient;
+import org.springframework.cloud.client.serviceregistry.Registration;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -28,6 +29,9 @@ public class UserController {
      */
     @Autowired
     private DiscoveryClient discoveryClient;
+
+    @Autowired
+    private Registration registration;
 
     /**
      * 获取单个用户信息
@@ -72,6 +76,7 @@ public class UserController {
      */
     @RequestMapping("discovery")
     public DiscoveryClient DiscoveryClient() throws Exception {
+        registration.getHost();
         // 获取所有的服务信息
         List<String> services = discoveryClient.getServices();
         System.out.println("所有服务信息：" + services);

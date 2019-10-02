@@ -1,4 +1,4 @@
-package com.sym.service.impl;
+package com.sym.service;
 
 import com.sym.entity.UserBean;
 import com.sym.service.UserServiceI;

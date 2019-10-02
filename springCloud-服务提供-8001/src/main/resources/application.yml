@@ -1,18 +1,45 @@
-## 配置服务端口
+## 此工程的相关配置
 server:
   port: 8001
-## 配置此应用的应用名
+  context-path: /provider_8001
 spring:
   application:
-    name: springCloud-provider
-## 配置连接Eureka服务端的若干信息
+    name: springCloud-provider # spring.application.name指定此工程表示的服务名称, Eureka会把此配置相同的服务实例归属于同一个服务的不同实例
+
+
 eureka:
   client:
+
+    ## Eureka注册中心的访问地址, 如果是高可用注册中心, 即集群, 则配置配置所有的服务中心URL, 用逗号隔开
     service-url:
-      defaultZone: http://127.0.0.1:9527/eureka #Eureka服务端的访问地址
+      defaultZone: http://127.0.0.1:9527/eureka
+
+    ## 在Spring Cloud Eureka中，我们可以通过简单的配置，把Eureka客户端的健康检测交给spring-boot-actuator模块的/health端点，以实现更加全面的健康状态维护
+    healthcheck:
+      enabled: true
+
   instance:
-    instance-id: provider-8001 #配置此应用注册到Eureka服务端的实例名称
+
+    # 默认springCloud是采用这种方式注册实例标识：${spring.cloud.client.hostname}:${spring.application.name}:${spring.application.instance_id:${server.port}}
+    instance-id: provider-8001 #配置此应用注册到Eureka服务端的实例名称, 用来区分同一服务中不同实例的唯一标识
     prefer-ip-address: true #允许使用本机IP地址作为服务注册的标识
+
+    # 在服务注册完毕后, 服务提供者会维护一个心跳以告诉注册中心Eureka它还“ 或者 ”, 此操作称为“ 服务续约 ”
+    # 关于服务续约有以下两个重要配置：
+    lease-renewal-interval-in-seconds: 30 #定义服务续约任务的调用时间间隔, 默认是30秒
+    lease-expiration-duration-in-seconds: 60 #表示自eureka服务器接收到上一次心跳以来可以等待的时间, 默认为90秒
+
+      ## 自定义服务元数据
+    metadata-map:
+      info: just do it man!!!
+      myself: you are the best
+      zone: beijing
+
+    # 这边可以配置相对路径, 也可以配置绝对路径, 在客户端使用https协议时, 这边就需要手动配置成类似：https://${server.context-path}/info
+    home-page-url:  /center #主页的URL
+    status-page-url: /info #状态页的URL, 默认使用spring-boot-actuator模块的/info端点
+    health-check-url: /health #健康检查的URL, 默认使用spring-boot-actuator模块的/health端点, 此配置一定要跟上spring-boot-actuator模块的/health端点, 端点的URL地址是什么, 此配置就是什么
+
 ## 使用info结合springBoot的监管模块，可以向外部简单介绍本应用的情况
 info:
   name: springCloud-provider-8001
