@@ -1,7 +1,7 @@
 ## 此工程的相关配置
 server:
   port: 8002
-  context-path: /provider_8002
+  #context-path: /provider
 spring:
   application:
     name: springCloud-provider # spring.application.name指定此工程表示的服务名称, Eureka会把此配置相同的服务实例归属于同一个服务的不同实例
