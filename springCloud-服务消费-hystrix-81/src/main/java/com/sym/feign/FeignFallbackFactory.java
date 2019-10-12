@@ -1,20 +1,19 @@
-package com.sym.fallback;
+package com.sym.feign;
 
 import com.sym.entity.UserBean;
-import com.sym.service.UserServiceI;
 import feign.hystrix.FallbackFactory;
-import org.springframework.stereotype.Component;
 
 import java.util.List;
 
 /**
- * Created by 沈燕明 on 2019/2/28.
+ * Created by shenym on 2019/10/12.
  */
-@Component
-public class DefaultFallbackFactory implements FallbackFactory<UserServiceI> {
+public class FeignFallbackFactory implements FallbackFactory<FeignService> {
+
     @Override
-    public UserServiceI create(Throwable cause) {
-        return new UserServiceI() {
+    public FeignService create(Throwable cause) {
+
+        return new FeignService() {
             @Override
             public UserBean getUserById(int UserId) {
                 return new UserBean(1, "error", "error", "出错了~");
