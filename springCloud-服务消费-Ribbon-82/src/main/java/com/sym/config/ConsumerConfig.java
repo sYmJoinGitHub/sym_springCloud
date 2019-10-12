@@ -11,8 +11,8 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.web.client.RestTemplate;
 
 /**
- * 消费方的配置类
- * <p>
+ * ribbon组件的配置
+ *
  * Created by 沈燕明 on 2019/1/20.
  */
 @Configuration
@@ -20,8 +20,6 @@ public class ConsumerConfig {
 
     /**
      * 注入RestTemplate并且开启负载均衡机制
-     *
-     * @return
      */
     @Bean
     @LoadBalanced //负载均衡注解
@@ -31,8 +29,6 @@ public class ConsumerConfig {
 
     /**
      * 替换springCloud默认的轮询策略的负载均衡机制为随机策略
-     *
-     * @return
      */
     @Bean
     public IRule myRule() {

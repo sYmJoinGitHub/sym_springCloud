@@ -1,6 +1,5 @@
 package com.sym.controller;
 
-import com.netflix.hystrix.contrib.javanica.annotation.HystrixCommand;
 import com.sym.entity.UserBean;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
@@ -17,8 +16,8 @@ import java.util.List;
  * <p>
  * Created by 沈燕明 on 2019/1/20.
  */
-@RestController()
-@RequestMapping("consumer")
+@RestController
+@RequestMapping("/ribbon")
 public class ConsumerController {
 
     @Value("${serviceName}")
@@ -52,23 +51,5 @@ public class ConsumerController {
         String url = "http://" + serviceName + "/provider/user/list";
         return restTemplate.getForObject(url, List.class);
     }
-
-    /**
-     * 调用远程服务抛异常的方法
-     *
-     * @return
-     * @throws Exception
-     */
-    @RequestMapping("error")
-    @HystrixCommand(fallbackMethod = "fallbackForError")
-    public UserBean error() throws Exception {
-        String url = "http://" + serviceName + "/provider/user/error";
-        return restTemplate.getForObject(url, UserBean.class);
-    }
-
-    private UserBean fallbackForError() {
-        return new UserBean(1, "default", "default", "出错了");
-    }
-
 
 }
