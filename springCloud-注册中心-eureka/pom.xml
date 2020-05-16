@@ -10,19 +10,19 @@
         <version>1.0-SNAPSHOT</version>
     </parent>
 
-    <artifactId>springcloud-provider-8001</artifactId>
+    <artifactId>springcloud-eureka-server</artifactId>
     <packaging>jar</packaging>
 
-    <name>springCloud服务提供方-8001</name>
-    <description>springCloud的服务提供方，暴露在8001端口</description>
+    <name>springCloud-注册中心Eureka</name>
+    <description>springCloud的注册中心Eureka,在9527端口开启</description>
+
 
     <dependencies>
-        <!-- Eureka客户端 -->
+        <!-- Eureka服务端 -->
         <dependency>
             <groupId>org.springframework.cloud</groupId>
-            <artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>
+            <artifactId>spring-cloud-starter-netflix-eureka-server</artifactId>
         </dependency>
     </dependencies>
-
 
 </project>

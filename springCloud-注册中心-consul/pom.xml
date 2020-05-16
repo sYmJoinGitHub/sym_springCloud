@@ -10,19 +10,20 @@
         <version>1.0-SNAPSHOT</version>
     </parent>
 
-    <artifactId>springcloud-provider-8001</artifactId>
+    <artifactId>springcloud-consul</artifactId>
     <packaging>jar</packaging>
 
-    <name>springCloud服务提供方-8001</name>
-    <description>springCloud的服务提供方，暴露在8001端口</description>
+    <name>springCloud-注册中心Consul</name>
 
     <dependencies>
-        <!-- Eureka客户端 -->
+        <!-- consul -->
         <dependency>
             <groupId>org.springframework.cloud</groupId>
-            <artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>
+            <artifactId>spring-cloud-starter-consul-discovery</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-consul-config</artifactId>
         </dependency>
     </dependencies>
-
-
 </project>

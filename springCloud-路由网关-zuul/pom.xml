@@ -10,11 +10,10 @@
         <version>1.0-SNAPSHOT</version>
     </parent>
 
-    <artifactId>springcloud-provider-8001</artifactId>
+    <artifactId>springcloud-zuul</artifactId>
     <packaging>jar</packaging>
 
-    <name>springCloud服务提供方-8001</name>
-    <description>springCloud的服务提供方，暴露在8001端口</description>
+    <name>springCloud路由网关</name>
 
     <dependencies>
         <!-- Eureka客户端 -->
@@ -22,7 +21,11 @@
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>
         </dependency>
+        <!-- zuul路由网关 -->
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-netflix-zuul</artifactId>
+        </dependency>
     </dependencies>
-
 
 </project>

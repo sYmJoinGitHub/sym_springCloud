@@ -10,19 +10,26 @@
         <version>1.0-SNAPSHOT</version>
     </parent>
 
-    <artifactId>springcloud-provider-8001</artifactId>
+    <artifactId>springcloud-config-server</artifactId>
     <packaging>jar</packaging>
 
-    <name>springCloud服务提供方-8001</name>
-    <description>springCloud的服务提供方，暴露在8001端口</description>
+    <name>springcloud-分布式配置中心-服务端</name>
+    <description>springCloud分布式配置中心服务端-10086</description>
+
 
     <dependencies>
-        <!-- Eureka客户端 -->
+        <!-- config分布式配置中心-服务端 -->
         <dependency>
             <groupId>org.springframework.cloud</groupId>
-            <artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>
+            <artifactId>spring-cloud-config-server</artifactId>
+        </dependency>
+        <!-- 消息总线Bus -->
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-bus-amqp</artifactId>
+            <!--<artifactId>spring-cloud-starter-bus-kafka</artifactId>-->
         </dependency>
     </dependencies>
 
-
+    
 </project>
