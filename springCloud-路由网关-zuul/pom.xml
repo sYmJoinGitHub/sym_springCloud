@@ -13,7 +13,7 @@
     <artifactId>springcloud-zuul</artifactId>
     <packaging>jar</packaging>
 
-    <name>springCloud路由网关</name>
+    <name>springCloud-路由网关-Zuul</name>
 
     <dependencies>
         <!-- Eureka客户端 -->
