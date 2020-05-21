@@ -13,7 +13,7 @@
     <artifactId>springcloud-hystrix</artifactId>
     <packaging>jar</packaging>
 
-    <name>springCloud服务消费方-81</name>
+    <name>springCloud-熔断器-Hystrix</name>
     <description>基于ribbon和feign的服务消费端, 同时加入了断路器hystrix</description>
 
     <dependencies>
