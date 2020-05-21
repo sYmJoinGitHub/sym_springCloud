@@ -13,7 +13,7 @@
     <artifactId>springcloud-sleuth</artifactId>
     <packaging>jar</packaging>
 
-    <name>springCloud链路追踪</name>
+    <name>springCloud-链路追踪-sleuth</name>
     <description>全链路追踪</description>
 
     <dependencies>
