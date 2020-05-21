@@ -13,7 +13,7 @@
     <artifactId>springcloud-gateway</artifactId>
     <packaging>jar</packaging>
 
-    <name>springCloud路由网关</name>
+    <name>springCloud-路由网关-Gateway</name>
 
     <dependencies>
         <!-- gateway -->
