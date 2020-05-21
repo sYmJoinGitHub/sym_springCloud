@@ -1,10 +1,7 @@
 package com.sym.config;
 
 import com.netflix.loadbalancer.IRule;
-import com.netflix.loadbalancer.RandomRule;
-import com.netflix.loadbalancer.RetryRule;
 import com.netflix.loadbalancer.RoundRobinRule;
-import com.sym.loadBalanced.MyLoadBalanced;
 import org.springframework.cloud.client.loadbalancer.LoadBalanced;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -13,16 +10,18 @@ import org.springframework.web.client.RestTemplate;
 /**
  * ribbon组件的配置
  *
- * Created by 沈燕明 on 2019/1/20.
+ * @author shenyanming
+ * @date 2019/1/20
  */
 @Configuration
-public class ConsumerConfig {
+public class RibbonConfig {
 
     /**
-     * 注入RestTemplate并且开启负载均衡机制
+     * 注入RestTemplate并且开启负载均衡机制，
+     * 必须加上{@link LoadBalanced}以便开启负载均衡
      */
     @Bean
-    @LoadBalanced //负载均衡注解
+    @LoadBalanced
     public RestTemplate restTemplate() {
         return new RestTemplate();
     }

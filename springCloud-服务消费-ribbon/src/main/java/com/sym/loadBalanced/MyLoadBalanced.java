@@ -11,14 +11,20 @@ import java.util.concurrent.atomic.AtomicInteger;
 /**
  * 自定义负载均衡策略：
  * 仍然以轮询为主，但是每个服务调用5次以后，换另外一个服务接着调用5次，以此类推
- * <p>
- * Created by 沈燕明 on 2019/2/17.
+ *
+ * @author shenyanming
+ * @date 2019/2/17
  */
 public class MyLoadBalanced extends AbstractLoadBalancerRule {
 
-    // 计数器，1开始计数到5，然后重置为1
+    /**
+     * 计数器，1开始计数到5，然后重置为1
+     */
     AtomicInteger count = new AtomicInteger(1);
-    // 所选服务的下标
+
+    /**
+     * 所选服务的下标
+     */
     AtomicInteger index = new AtomicInteger(0);
 
     @Override
@@ -28,47 +34,34 @@ public class MyLoadBalanced extends AbstractLoadBalancerRule {
 
     /**
      * 真正的负载均衡逻辑
-     *
-     * @param loadBalancer
-     * @param key
-     * @return
      */
     private Server choose(ILoadBalancer loadBalancer, Object key) {
-
         Server server = null;
-
         if (loadBalancer == null) {
             return null;
         }
         // 总的服务列表
         List<Server> reachableServers = loadBalancer.getAllServers();
         int size = reachableServers.size();
-
         if (size == 0) {
             throw new RuntimeException("没有可用的服务");
         }
 
         // 为了防止无限循环
         int temp = 0;
-
         while (server == null && temp++ < 10) {
             server = reachableServers.get(getIndex(size));
-
             if (server == null) {
                 Thread.yield();
                 continue;
             }
-
             if (server.isAlive() && server.isReadyToServe()) {
                 return server;
             }
-
         }
-
         if (temp >= 10) {
             throw new RuntimeException("重试了" + temp + "次,仍未找到合适的服务提供方");
         }
-
         return server;
     }
 
@@ -76,12 +69,11 @@ public class MyLoadBalanced extends AbstractLoadBalancerRule {
      * 获取当前可用服务列表的下标
      *
      * @param all 可用的服务数量
-     * @return
      */
     private int getIndex(int all) {
         for (; ; ) {
             if (count.get() < 5) {
-                count.getAndIncrement();// count要+1
+                count.getAndIncrement();
                 if (count.get() > 5) {
                     continue;
                 }

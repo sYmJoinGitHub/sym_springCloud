@@ -13,7 +13,7 @@
     <artifactId>springcloud-ribbon</artifactId>
     <packaging>jar</packaging>
 
-    <name>springCloud服务消费方-82</name>
+    <name>springCloud-服务消费-ribbon</name>
     <description>基于Ribbon的springCloud服务消费端</description>
 
     <dependencies>
