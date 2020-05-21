@@ -13,7 +13,7 @@
     <artifactId>springcloud-config-client-10000</artifactId>
     <packaging>jar</packaging>
 
-    <name>springCloud-分布式配置中心-客户端-10000</name>
+    <name>springCloud-配置中心-ConfigClient</name>
     <description>springCloud分布式配置中心服务端-其端口由云端仓库的配置文件决定</description>
 
     <dependencies>
