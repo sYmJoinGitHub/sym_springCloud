@@ -1,0 +1,5 @@
+eureka:
+  client:
+    service-url:
+      defaultZone: http://127.0.0.1:10000/eureka #配置注册中心的地址
+    register-with-eureka: false #此实例作为服务消费，不需要把自己注册到Eureka Server上

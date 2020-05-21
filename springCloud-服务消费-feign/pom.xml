@@ -13,7 +13,7 @@
     <artifactId>springcloud-feign</artifactId>
     <packaging>jar</packaging>
 
-    <name>springCloud服务消费方-80</name>
+    <name>springCloud-服务消费-feign</name>
     <description>基于Feign的springCloud服务消费端</description>
 
     <dependencies>
@@ -22,9 +22,11 @@
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-starter-openfeign</artifactId>
         </dependency>
+        <!-- Eureka客户端 -->
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>
+        </dependency>
     </dependencies>
 
-
-
-    
 </project>

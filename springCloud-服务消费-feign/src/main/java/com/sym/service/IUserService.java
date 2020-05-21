@@ -8,10 +8,12 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import java.util.List;
 
 /**
- * Created by 沈燕明 on 2019/1/16.
+ *
+ * @author shenhanming
+ * @date 2019/1/16
  */
-@FeignClient(name = "${serviceName}", path = "provider/user")
-public interface UserServiceI {
+@FeignClient(name = "${serviceName}", path = "/provider/user")
+public interface IUserService {
 
     @RequestMapping("get/{id}")
     UserBean getUserById(@PathVariable("id") int userId);

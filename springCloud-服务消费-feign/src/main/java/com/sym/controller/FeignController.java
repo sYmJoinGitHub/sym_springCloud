@@ -1,7 +1,7 @@
 package com.sym.controller;
 
 import com.sym.entity.UserBean;
-import com.sym.service.UserServiceI;
+import com.sym.service.IUserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -12,21 +12,22 @@ import java.util.List;
 /**
  * springCloud的服务调用可以使用Feign来实现，只需要一个接口和一个@FeignClient注解即可
  *
- * Created by 沈燕明 on 2019/1/20.
+ * @author shenyanming
+ * @date 2019/1/20
  */
 @RestController
 @RequestMapping("/feign")
-public class ConsumerController {
+public class FeignController {
 
     @Autowired
-    private UserServiceI userServiceI;
+    private IUserService userService;
 
     /**
      * 调用远程服务，获取当个用户的信息
      */
     @RequestMapping("/get/{id}")
     public UserBean getOne(@PathVariable("id") int userId) throws Exception {
-        return userServiceI.getUserById(userId);
+        return userService.getUserById(userId);
     }
 
 
@@ -35,7 +36,7 @@ public class ConsumerController {
      */
     @RequestMapping("/list")
     public List<UserBean> getList() throws Exception {
-        return userServiceI.getUserList();
+        return userService.getUserList();
     }
 
 }
