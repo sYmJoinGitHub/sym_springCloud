@@ -13,7 +13,7 @@
     <artifactId>springcloud-consul</artifactId>
     <packaging>jar</packaging>
 
-    <name>springCloud-注册中心Consul</name>
+    <name>springCloud-注册中心-Consul</name>
 
     <dependencies>
         <!-- consul -->
