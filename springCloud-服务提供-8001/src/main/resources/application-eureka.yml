@@ -23,3 +23,7 @@ eureka:
     home-page-url:  /center #主页的URL
     status-page-url: /info #状态页的URL, 默认使用spring-boot-actuator模块的/info端点
     health-check-url: /health #健康检查的URL, 默认使用spring-boot-actuator模块的/health端点, 此配置一定要跟上spring-boot-actuator模块的/health端点, 端点的URL地址是什么, 此配置就是什么
+
+sym:
+  eureka:
+    enable: true

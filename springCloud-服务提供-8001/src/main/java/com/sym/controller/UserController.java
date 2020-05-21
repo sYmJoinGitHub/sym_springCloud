@@ -35,7 +35,7 @@ public class UserController {
     @Autowired
     private DiscoveryClient discoveryClient;
 
-    @Autowired
+    //@Autowired
     private Registration registration;
 
     /**
