@@ -13,7 +13,7 @@
     <artifactId>springcloud-config-server</artifactId>
     <packaging>jar</packaging>
 
-    <name>springcloud-分布式配置中心-服务端</name>
+    <name>springCloud-配置中心-ConfigServer</name>
     <description>springCloud分布式配置中心服务端-10086</description>
 
 
