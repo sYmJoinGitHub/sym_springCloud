@@ -22,7 +22,7 @@ import java.util.List;
  * @date 2019/1/20
  */
 @RestController
-@RequestMapping("provider/user")
+@RequestMapping("/provider/user")
 @Slf4j
 public class UserController {
 
@@ -35,7 +35,7 @@ public class UserController {
     @Autowired
     private DiscoveryClient discoveryClient;
 
-    //@Autowired
+    @Autowired
     private Registration registration;
 
     /**
