@@ -13,7 +13,7 @@
     <artifactId>springcloud-provider-8001</artifactId>
     <packaging>jar</packaging>
 
-    <name>springCloud服务提供方-8001</name>
+    <name>springCloud-下沉服务-8001</name>
     <description>springCloud的服务提供方，暴露在8001端口</description>
 
     <dependencies>
