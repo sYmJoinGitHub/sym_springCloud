@@ -1,14 +1,14 @@
-## 配置本EurekaServer注册中心的启动端口:9527
+## 配置EurekaServer注册中心的启动端口:9527
 server:
-  port: 9527
+  port: 10000
 ## EurekaServer的其它配置
 eureka:
   instance:
-    hostname: server9527 #代表本实例的主机名
+    hostname: eureka-server-10000 #代表本实例的主机名
   client:
     register-with-eureka: false # 表示此实例是否应将其信息注册到eureka服务器以供其它实例发现
     fetch-registry: false # 表示此实例是否应从eureka服务器获取eureka注册表信息
-    service-url: #搭建Eureka Server集群时使用service-url将本实例注册到其它EurekaServer节点，以便搭建EurekaServer集群
-      defaultZone: http://127.0.0.1:9528/eureka
+    #service-url: #搭建Eureka Server集群时使用service-url将本实例注册到其它EurekaServer节点，以便搭建EurekaServer集群
+      #defaultZone: http://127.0.0.1:9528/eureka
   server:
     enable-self-preservation: false #单机环境下关闭自我保护机制

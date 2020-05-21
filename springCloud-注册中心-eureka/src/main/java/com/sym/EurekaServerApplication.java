@@ -5,14 +5,14 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cloud.netflix.eureka.server.EnableEurekaServer;
 
 /**
- * springCloud注册中心的启动类
- * <p>
- * Created by 沈燕明 on 2019/1/15.
+ * 注册中心 Eureka Server 的启动类
+ *
+ * @author shenyanming
  */
 @SpringBootApplication
 @EnableEurekaServer
-public class EurekaServerApp9527 {
+public class EurekaServerApplication {
     public static void main(String[] args) {
-        SpringApplication.run(EurekaServerApp9527.class, args);
+        SpringApplication.run(EurekaServerApplication.class, args);
     }
 }
