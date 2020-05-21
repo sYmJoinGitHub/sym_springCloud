@@ -2,6 +2,8 @@ package com.sym;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.cloud.netflix.eureka.EurekaClientAutoConfiguration;
+import org.springframework.cloud.netflix.eureka.EurekaDiscoveryClientConfiguration;
 import org.springframework.cloud.openfeign.EnableFeignClients;
 
 /**
@@ -10,7 +12,7 @@ import org.springframework.cloud.openfeign.EnableFeignClients;
  * @author shenyanming
  * @date 2019/1/20
  */
-@SpringBootApplication
+@SpringBootApplication(exclude = {EurekaClientAutoConfiguration.class, EurekaDiscoveryClientConfiguration.class})
 @EnableFeignClients
 public class FeignApplication {
     public static void main(String[] args) {
