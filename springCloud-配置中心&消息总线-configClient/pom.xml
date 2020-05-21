@@ -10,7 +10,7 @@
         <version>1.0-SNAPSHOT</version>
     </parent>
 
-    <artifactId>springcloud-config-client-10000</artifactId>
+    <artifactId>springcloud-config-client</artifactId>
     <packaging>jar</packaging>
 
     <name>springCloud-配置中心-ConfigClient</name>
