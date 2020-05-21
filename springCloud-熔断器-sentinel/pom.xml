@@ -13,6 +13,9 @@
     <artifactId>springcloud-sentinel</artifactId>
     <packaging>jar</packaging>
 
+    <name>springCloud-熔断器-Sentinel</name>
+    <description>使用Sentinel作为熔断器</description>
+
     <dependencies>
         <dependency>
             <groupId>com.alibaba.cloud</groupId>
