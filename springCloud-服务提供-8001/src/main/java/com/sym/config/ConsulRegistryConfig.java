@@ -44,7 +44,7 @@ public class ConsulRegistryConfig {
 
 
     /**
-     * 注册到 Consul 的配置信息
+     * 注册到 Consul Server 的配置信息
      *
      * @see ConsulAutoServiceRegistrationAutoConfiguration#consulAutoServiceRegistration(
      *ConsulServiceRegistry, AutoServiceRegistrationProperties, ConsulDiscoveryProperties, ConsulAutoRegistration)
@@ -62,7 +62,7 @@ public class ConsulRegistryConfig {
     }
 
     /**
-     * 注册到 Consul 的配置信息
+     * 注册到 Consul Server 的自动配置组件
      *
      * @see ConsulAutoServiceRegistrationAutoConfiguration#consulAutoServiceRegistration(
      *ConsulServiceRegistry, AutoServiceRegistrationProperties, ConsulDiscoveryProperties, ConsulAutoRegistration)
@@ -78,7 +78,7 @@ public class ConsulRegistryConfig {
     }
 
     /**
-     *
+     * consul 注册器
      */
     @Bean
     public ConsulServiceRegistry consulServiceRegistry(ConsulClient consulClient,

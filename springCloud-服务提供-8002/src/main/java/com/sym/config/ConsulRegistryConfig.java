@@ -77,7 +77,7 @@ public class ConsulRegistryConfig {
     }
 
     /**
-     *
+     * consul 注册器
      */
     @Bean
     public ConsulServiceRegistry consulServiceRegistry(ConsulClient consulClient,

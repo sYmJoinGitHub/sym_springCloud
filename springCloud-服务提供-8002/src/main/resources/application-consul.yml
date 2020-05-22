@@ -28,6 +28,8 @@ spring:
 eureka:
   client:
     enabled: false
+
+
 # 自定义配置项, 启动 Consul 的配置类
 sym:
   consul:

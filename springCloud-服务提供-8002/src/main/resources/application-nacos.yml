@@ -1,0 +1,19 @@
+spring:
+  cloud:
+    nacos:
+      # 配置nacos服务注册与发现功能
+      discovery:
+        server-addr: 127.0.0.1:8848 #配置nacos server的地址(需要独立部署)
+        registerEnabled: true #是否需要将本服务注册到nacos上, 若是服务消费方, 这个属性配置为false
+
+# 关闭 spring cloud 对 Eureka 的自动注册.
+# 相关配置类: EurekaClientAutoConfiguration
+eureka:
+  client:
+    enabled: false
+
+
+# 自定义配置项, 启动 Nacos 的配置类
+sym:
+  nacos:
+    enable: true

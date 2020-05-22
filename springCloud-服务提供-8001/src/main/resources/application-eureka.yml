@@ -24,12 +24,6 @@ eureka:
     status-page-url: /info # 状态页的URL, 默认使用spring-boot-actuator模块的/info端点
     health-check-url: /health # 健康检查的URL, 默认使用spring-boot-actuator模块的/health端点, 此配置一定要跟上spring-boot-actuator模块的/health端点, 端点的URL地址是什么, 此配置就是什么
 
-# 关闭 spring cloud 对 consul 组件的注册
-# 相关的自动配置类: ConsulServiceRegistryAutoConfiguration
-spring:
-  cloud:
-    service-registry:
-      enabled: false
 
 # 自定义的配置项, 用于启动 eureka 的配置类
 sym:
