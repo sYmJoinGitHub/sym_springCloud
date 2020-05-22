@@ -1,5 +1,6 @@
 package com.sym;
 
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
@@ -15,6 +16,7 @@ import org.springframework.context.annotation.Bean;
 @SpringBootApplication
 @EnableEurekaClient
 @EnableDiscoveryClient
+@Slf4j
 public class ProviderApp8002 {
 
     @Bean
@@ -23,6 +25,7 @@ public class ProviderApp8002 {
     }
 
     public static void main(String[] args) {
+        log.info("provider-8002服务启动成功");
         SpringApplication.run(ProviderApp8002.class, args);
     }
 }

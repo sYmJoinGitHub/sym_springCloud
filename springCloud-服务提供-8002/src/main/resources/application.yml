@@ -5,12 +5,11 @@ spring:
   application:
     name: shenyanming-user-provider
   profiles:
-    active: nacos
+    active: eureka
   ## 因为这个项目集成了多个注册中心, 所以需要将此配置关掉, 不然springCloud会自动加载
   ## 各个注册中心的自动配置类, 导致项目出现多个Bean而报错. 这边把它关掉, 自己配置
   cloud:
     service-registry:
-      enabled: false # for consul自动配偶类：ConsulServiceRegistryAutoConfiguration
       auto-registration:
         enabled: false
 

@@ -1,5 +1,7 @@
 spring:
   cloud:
+    service-registry:
+      enabled: false # for consul自动配置类：ConsulServiceRegistryAutoConfiguration
     nacos:
       # 配置nacos服务注册与发现功能
       discovery:
