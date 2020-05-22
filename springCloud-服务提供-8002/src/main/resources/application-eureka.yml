@@ -8,7 +8,7 @@ eureka:
       enabled: true
   instance:
     # 默认springCloud是采用这种方式注册实例标识：${spring.cloud.client.hostname}:${spring.application.name}:${spring.application.instance_id:${server.port}}
-    instance-id: provider-8002 #配置此应用注册到Eureka服务端的实例名称, 用来区分同一服务中不同实例的唯一标识
+    instance-id: shenyanming:user-provider-8002 #配置此应用注册到Eureka服务端的实例名称, 用来区分同一服务中不同实例的唯一标识
     prefer-ip-address: true #允许使用本机IP地址作为服务注册的标识
     # 在服务注册完毕后, 服务提供者会维护一个心跳以告诉注册中心Eureka它还“ 或者 ”, 此操作称为“ 服务续约 ”
     # 关于服务续约有以下两个重要配置：
@@ -16,10 +16,22 @@ eureka:
     lease-expiration-duration-in-seconds: 60 #表示自eureka服务器接收到上一次心跳以来可以等待的时间, 默认为90秒
     ## 自定义服务元数据
     metadata-map:
-      info: just do it man!!!
-      myself: you are the best
+      info: just do it man!!! from eureka
+      myself: you are the best one
       zone: shanghai
     # 这边可以配置相对路径, 也可以配置绝对路径, 在客户端使用https协议时, 这边就需要手动配置成类似：https://${server.context-path}/info
     home-page-url:  /center #主页的URL
     status-page-url: /info #状态页的URL, 默认使用spring-boot-actuator模块的/info端点
     health-check-url: /health #健康检查的URL, 默认使用spring-boot-actuator模块的/health端点, 此配置一定要跟上spring-boot-actuator模块的/health端点, 端点的URL地址是什么, 此配置就是什么
+
+# 关闭 spring cloud 对 consul 组件的注册
+# 相关的自动配置类: ConsulServiceRegistryAutoConfiguration
+spring:
+  cloud:
+    service-registry:
+      enabled: false
+
+# 自定义的配置项, 用于启动 eureka 的配置类
+sym:
+  eureka:
+    enable: true

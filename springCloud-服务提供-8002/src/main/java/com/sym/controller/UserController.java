@@ -6,6 +6,7 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cloud.client.ServiceInstance;
 import org.springframework.cloud.client.discovery.DiscoveryClient;
+import org.springframework.cloud.client.serviceregistry.Registration;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -32,6 +33,9 @@ public class UserController {
      */
     @Autowired
     private DiscoveryClient discoveryClient;
+
+    @Autowired
+    private Registration registration;
 
     /**
      * 获取单个用户信息
@@ -66,7 +70,7 @@ public class UserController {
      */
     @RequestMapping("/discovery")
     public DiscoveryClient discoveryClient() {
-        log.info("[8002]服务发现");
+        log.info("[8002]服务发现, 注册信息：{}", registration);
         // 获取所有的服务信息
         List<String> services = discoveryClient.getServices();
         System.out.println("所有服务信息：" + services);
