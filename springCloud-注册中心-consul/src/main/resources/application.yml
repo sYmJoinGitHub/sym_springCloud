@@ -1,3 +1,5 @@
+### Consul Server是外部独立组件, 需要单独部署
+### Consul Client 的配置例子.
 spring:
   application:
     name: consul-service
