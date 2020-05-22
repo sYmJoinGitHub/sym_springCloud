@@ -13,6 +13,7 @@ spring:
         enabled: false
 
 
+
 ## 使用info结合springBoot的监管模块，可以向外部简单介绍本应用的情况
 info:
   name: springCloud-provider-8001
