@@ -16,7 +16,7 @@
     <name>springCloud-注册中心-Consul</name>
 
     <dependencies>
-        <!-- consul -->
+        <!-- 服务的注册与发现 -->
         <dependency>
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-starter-consul-discovery</artifactId>

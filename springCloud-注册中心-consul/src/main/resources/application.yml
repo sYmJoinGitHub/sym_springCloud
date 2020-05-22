@@ -2,7 +2,7 @@
 ### Consul Client 的配置例子.
 spring:
   application:
-    name: consul-service
+    name: consul-demo
   cloud:
     consul:
       # 服务发现配置
