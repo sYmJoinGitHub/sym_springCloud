@@ -2,6 +2,7 @@
 # Intellij
 ######################
 .idea/
+target/
 *.iml
 *.iws
 *.ipr
@@ -64,3 +65,5 @@ flyway/jars/*.jar
 # Configurations
 ######################
 database.properties
+target/generated-sources/
+target/generated-test-sources/
