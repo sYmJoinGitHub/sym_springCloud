@@ -3,7 +3,7 @@ server:
   port: 8002
 spring:
   application:
-    name: shenyanming:user-provider
+    name: shenyanming-user-provider
   profiles:
     active: nacos
   ## 因为这个项目集成了多个注册中心, 所以需要将此配置关掉, 不然springCloud会自动加载
@@ -16,6 +16,6 @@ spring:
 
 ## 使用info结合springBoot的监管模块，可以向外部简单介绍本应用的情况
 info:
-  name: shenyanming:user-provider-8002
+  name: shenyanming-user-provider-8002
   desc: 在8002端口暴露出服务
   company: com.sym
