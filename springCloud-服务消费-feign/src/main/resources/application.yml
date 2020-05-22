@@ -1,5 +1,5 @@
 ## 服务提供方的应用名称
-serviceName: springCloud-provider
+serviceName: shenyanming:user-provider
 
 server:
   port: 80
