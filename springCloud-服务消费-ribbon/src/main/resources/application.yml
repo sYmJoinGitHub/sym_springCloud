@@ -1,8 +1,16 @@
-## 服务提供方的应用名称
-serviceName: shenyanming:user-provider
-
 server:
   port: 81
 spring:
   profiles:
-    active: eureka
+    active: nacos
+  cloud:
+    service-registry:
+      enabled: false # for consul自动配置类：ConsulServiceRegistryAutoConfiguration
+      auto-registration:
+        enabled: false
+
+## 自定义配置, 用来标识服务提供方的应用名称
+sym:
+  service:
+    provider:
+      name: shenyanming-user-provider

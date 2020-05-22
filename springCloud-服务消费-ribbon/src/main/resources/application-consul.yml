@@ -1,0 +1,21 @@
+spring:
+  cloud:
+    consul:
+      discovery:
+        register: false
+        #service-name: springCloud-consumer
+        # 服务注册标识，格式为：应用名称+服务器IP+端口
+        instance-id: ${spring.application.name}:${spring.cloud.client.ip-address}:${server.port}
+      host: 127.0.0.1
+      port: 8500
+
+# 关闭 spring cloud 对 Eureka 的自动注册, 相关配置类: EurekaClientAutoConfiguration
+eureka:
+  client:
+    enabled: false
+
+
+# 自定义配置项, 启动 Consul 的配置类
+sym:
+  consul:
+    enable: true

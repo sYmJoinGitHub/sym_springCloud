@@ -22,7 +22,7 @@ import java.util.List;
 @RequestMapping("/ribbon")
 public class RibbonController {
 
-    @Value("${serviceName}")
+    @Value("${sym.service.provider.name}")
     private String serviceName;
 
     @Autowired
