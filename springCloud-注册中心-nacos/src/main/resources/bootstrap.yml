@@ -1,0 +1,12 @@
+## 如果要实现配置热更新, 就必须要创建一个 bootstrap.yml, 指定 nacos server的连接地址。
+## nacos的dataId的组成部分如下：
+## ${spring.application.name}-${spring.profiles.active}.${spring.cloud.nacos.config.file-extension}
+## 所以再使用nacos做配置中心的时候, 一定要对应好
+spring:
+  cloud:
+    nacos:
+      # nacos作为配置中心的功能
+      config:
+        server-addr: 127.0.0.1:8848
+        file-extension: yaml # ${spring.cloud.nacos.config.file-extension} 的值
+        name: nacos-config-demo # 表示 ${spring.application.name} 的值
