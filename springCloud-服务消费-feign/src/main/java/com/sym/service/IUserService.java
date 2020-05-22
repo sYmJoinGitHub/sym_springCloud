@@ -12,7 +12,7 @@ import java.util.List;
  * @author shenhanming
  * @date 2019/1/16
  */
-@FeignClient(name = "${serviceName}", path = "/provider/user")
+@FeignClient(name = "${sym.service.provider.name}", path = "/provider/user")
 public interface IUserService {
 
     @RequestMapping("get/{id}")
