@@ -14,15 +14,15 @@
     <packaging>jar</packaging>
 
     <name>springCloud-下沉服务-8001</name>
-    <description>springCloud的服务提供方，暴露在8001端口</description>
+    <description>springCloud的服务提供方，暴露在8001端口, 还有一个8002端口, 主要用于负载均衡测试</description>
 
     <dependencies>
-        <!-- Eureka客户端 -->
+        <!-- Eureka client -->
         <dependency>
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>
         </dependency>
-        <!-- consul -->
+        <!-- consul client-->
         <dependency>
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-starter-consul-discovery</artifactId>

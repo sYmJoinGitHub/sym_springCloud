@@ -20,11 +20,11 @@ public class UserServiceImpl implements IUserService {
     private Map<Integer, UserBean> dataMap = new HashMap<>();
 
     public UserServiceImpl() {
-        dataMap.put(1, new UserBean(1, "张三", "542569", "database-8001"));
-        dataMap.put(2, new UserBean(2, "李四", "542569", "database-8001"));
-        dataMap.put(3, new UserBean(3, "王五", "542569", "database-8001"));
-        dataMap.put(4, new UserBean(4, "赵六", "542569", "database-8001"));
-        dataMap.put(5, new UserBean(5, "孙七", "542569", "database-8001"));
+        dataMap.put(1, new UserBean(1, "曹操", "520", "database-8001"));
+        dataMap.put(2, new UserBean(2, "郭嘉", "520", "database-8001"));
+        dataMap.put(3, new UserBean(3, "荀彧", "520", "database-8001"));
+        dataMap.put(4, new UserBean(4, "许褚", "520", "database-8001"));
+        dataMap.put(5, new UserBean(5, "典韦", "520", "database-8001"));
     }
 
     @Override

@@ -70,8 +70,7 @@ public class UserController {
      */
     @RequestMapping("/discovery")
     public DiscoveryClient discoveryClient() {
-        log.info("[8001]服务发现");
-        registration.getHost();
+        log.info("[8001]服务发现, 注册信息：{}", registration);
         // 获取所有的服务信息
         List<String> services = discoveryClient.getServices();
         System.out.println("所有服务信息：" + services);

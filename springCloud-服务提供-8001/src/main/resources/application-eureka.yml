@@ -9,7 +9,7 @@ eureka:
       enabled: true
   instance:
     # 默认springCloud是采用这种方式注册实例标识：${spring.cloud.client.hostname}:${spring.application.name}:${spring.application.instance_id:${server.port}}
-    instance-id: provider-8001 #配置此应用注册到Eureka服务端的实例名称, 用来区分同一服务中不同实例的唯一标识
+    instance-id: shenyanming:user-provider-8001 #配置此应用注册到Eureka服务端的实例名称, 用来区分同一服务中不同实例的唯一标识
     prefer-ip-address: true #允许使用本机IP地址作为服务注册的标识
     # 在服务注册完毕后, 服务提供者会维护一个心跳以告诉注册中心Eureka它还活着, 此操作称为[服务续约],关于服务续约有以下两个重要配置：
     lease-renewal-interval-in-seconds: 30 #定义服务续约任务的调用时间间隔, 默认是30秒
