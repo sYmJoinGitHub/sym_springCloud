@@ -2,12 +2,13 @@ server:
   port: 81
 spring:
   profiles:
-    active: nacos
+    active: consul #eureka、consul、nacos
   cloud:
     service-registry:
-      enabled: false # for consul自动配置类：ConsulServiceRegistryAutoConfiguration
       auto-registration:
         enabled: false
+  application:
+    name: shenyanming-user-ribbon-consumer
 
 ## 自定义配置, 用来标识服务提供方的应用名称
 sym:
