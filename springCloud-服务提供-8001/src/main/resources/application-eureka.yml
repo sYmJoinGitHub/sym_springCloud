@@ -3,7 +3,7 @@ eureka:
   client:
     # Eureka注册中心的访问地址, 如果是高可用注册中心, 即集群, 则配置配置所有的服务中心URL, 用逗号隔开
     service-url:
-      defaultZone: http://127.0.0.1:10000/eureka
+      defaultZone: http://127.0.0.1:9527/eureka
     # 在Spring Cloud Eureka中，我们可以通过简单的配置，把Eureka客户端的健康检测交给spring-boot-actuator模块的/health端点，以实现更加全面的健康状态维护
     healthcheck:
       enabled: true
@@ -23,6 +23,12 @@ eureka:
     home-page-url:  /center # 主页的URL
     status-page-url: /info # 状态页的URL, 默认使用spring-boot-actuator模块的/info端点
     health-check-url: /health # 健康检查的URL, 默认使用spring-boot-actuator模块的/health端点, 此配置一定要跟上spring-boot-actuator模块的/health端点, 端点的URL地址是什么, 此配置就是什么
+
+# for consul自动配置类：ConsulServiceRegistryAutoConfiguration
+spring:
+  cloud:
+    service-registry:
+      enabled: false
 
 
 # 自定义的配置项, 用于启动 eureka 的配置类
