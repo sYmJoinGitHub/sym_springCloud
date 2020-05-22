@@ -26,16 +26,15 @@ public class FeignController {
      * 调用远程服务，获取当个用户的信息
      */
     @RequestMapping("/get/{id}")
-    public UserBean getOne(@PathVariable("id") int userId) throws Exception {
+    public UserBean getOne(@PathVariable("id") int userId) {
         return userService.getUserById(userId);
     }
-
 
     /**
      * 调用远程服务，获取全部的用户信息
      */
     @RequestMapping("/list")
-    public List<UserBean> getList() throws Exception {
+    public List<UserBean> getList() {
         return userService.getUserList();
     }
 

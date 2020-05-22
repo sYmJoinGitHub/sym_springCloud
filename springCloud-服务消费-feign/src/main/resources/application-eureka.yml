@@ -1,8 +1,20 @@
 eureka:
   client:
     service-url:
-      defaultZone: http://127.0.0.1:10000/eureka #配置注册中心的地址
+      defaultZone: http://127.0.0.1:9527/eureka #配置注册中心的地址
     register-with-eureka: false #此实例作为服务消费，不需要把自己注册到Eureka Server上
+    # 服务消费者启动时, 它会发送REST请求给Eureka注册中心, 获取在它上面注册的服务清单; Eureka Server会维护
+    # 会维护一份只读的服务清单来返回给客户端, 该服务端清单每隔30秒更新一次, 关于获取服务清单有以下两个配置：
+    fetch-registry: true # 为true时表示需要从Eureka Server获取服务清单
+    registry-fetch-interval-seconds: 30 #默认情况下服务清单每隔30秒更新一次, 此配置可以修改它的更新间隔时间
+
+
+# for consul自动配置类：ConsulServiceRegistryAutoConfiguration
+spring:
+  cloud:
+    service-registry:
+      enabled: false
+
 
 # 自定义的配置项, 用于启动 eureka 的配置类
 sym:
