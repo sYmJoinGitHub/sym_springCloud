@@ -1,6 +1,6 @@
 ## 配置EurekaServer注册中心的启动端口:9527
 server:
-  port: 10000
+  port: 9527
 ## EurekaServer的其它配置
 eureka:
   instance:
