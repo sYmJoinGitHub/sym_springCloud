@@ -16,10 +16,10 @@ import org.springframework.web.client.RestTemplate;
 @EnableFeignClients
 @EnableCircuitBreaker  //开启hystrix
 @EnableHystrixDashboard
-public class HystrixConsumer81 {
+public class HystrixApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(HystrixConsumer81.class, args);
+        SpringApplication.run(HystrixApplication.class, args);
     }
 
     /**

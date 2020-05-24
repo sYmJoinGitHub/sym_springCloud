@@ -10,7 +10,9 @@ import java.util.List;
 /**
  * Created by shenym on 2019/10/12.
  */
-@FeignClient(name = "${serviceName}", path = "provider/user", fallbackFactory = FeignFallbackFactory.class)
+@FeignClient(name = "${serviceName}",
+        path = "provider/user",
+        fallbackFactory = FeignFallbackFactory.class)
 public interface FeignService {
 
     @RequestMapping("get/{id}")
