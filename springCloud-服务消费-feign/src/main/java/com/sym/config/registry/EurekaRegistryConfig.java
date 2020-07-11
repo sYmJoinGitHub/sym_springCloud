@@ -1,4 +1,4 @@
-package com.sym.config;
+package com.sym.config.registry;
 
 import com.alibaba.cloud.nacos.ribbon.NacosRibbonClientConfiguration;
 import com.alibaba.cloud.nacos.ribbon.NacosServerIntrospector;

@@ -1,4 +1,4 @@
-package com.sym.config;
+package com.sym.config.registry;
 
 import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
 import org.springframework.cloud.consul.discovery.ConsulServerIntrospector;

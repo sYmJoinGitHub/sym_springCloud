@@ -1,4 +1,4 @@
-package com.sym.config;
+package com.sym.config.registry;
 
 import com.alibaba.cloud.nacos.ribbon.NacosServerIntrospector;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
