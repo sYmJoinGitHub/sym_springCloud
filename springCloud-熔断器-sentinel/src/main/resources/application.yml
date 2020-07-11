@@ -1,2 +1,10 @@
 server:
   port: 8082
+spring:
+  cloud:
+    sentinel:
+      enabled: true
+      filter:
+        enabled: true
+      log:
+        dir: log/
