@@ -21,4 +21,11 @@ public class UserBean {
      * 此数据存放在哪个数据库上
      */
     private String database;
+
+    public static final UserBean FALLBACK_INSTANCE;
+
+    static {
+        FALLBACK_INSTANCE = new UserBean();
+        FALLBACK_INSTANCE.database = "降级处理";
+    }
 }
