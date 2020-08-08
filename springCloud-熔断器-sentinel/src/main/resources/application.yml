@@ -8,3 +8,4 @@ spring:
         enabled: true
       log:
         dir: log/
+serviceName: shenyanming-user-provider
