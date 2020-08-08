@@ -8,13 +8,17 @@ eureka:
     fetch-registry: true # 为true时表示需要从Eureka Server获取服务清单
     registry-fetch-interval-seconds: 30 #默认情况下服务清单每隔30秒更新一次, 此配置可以修改它的更新间隔时间
 
-
 # for consul自动配置类：ConsulServiceRegistryAutoConfiguration
+# for nacos自动配置类: NacosReactiveDiscoveryClientConfiguration
 spring:
   cloud:
     service-registry:
       enabled: false
-
+    consul:
+      enabled: false
+    nacos:
+      discovery:
+        enabled: false
 
 # 自定义的配置项, 用于启动 eureka 的配置类
 sym:
