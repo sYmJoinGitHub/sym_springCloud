@@ -6,7 +6,7 @@
 
     <parent>
         <groupId>com.sym</groupId>
-        <artifactId>springcloud-core-api</artifactId>
+        <artifactId>springcloud-basic-dependence</artifactId>
         <version>1.0-SNAPSHOT</version>
     </parent>
 
@@ -22,6 +22,11 @@
         <dependency>
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-starter-netflix-eureka-server</artifactId>
+        </dependency>
+        <!-- for web -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web</artifactId>
         </dependency>
     </dependencies>
 
