@@ -25,11 +25,16 @@ eureka:
     health-check-url: /health # 健康检查的URL, 默认使用spring-boot-actuator模块的/health端点, 此配置一定要跟上spring-boot-actuator模块的/health端点, 端点的URL地址是什么, 此配置就是什么
 
 # for consul自动配置类：ConsulServiceRegistryAutoConfiguration
+# for nacos自动配置类: NacosReactiveDiscoveryClientConfiguration
 spring:
   cloud:
     service-registry:
       enabled: false
-
+    consul:
+      enabled: false
+    nacos:
+      discovery:
+        enabled: false
 
 # 自定义的配置项, 用于启动 eureka 的配置类
 sym:
