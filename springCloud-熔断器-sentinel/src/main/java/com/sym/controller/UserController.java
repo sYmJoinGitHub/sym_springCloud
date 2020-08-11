@@ -11,6 +11,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.client.RestTemplate;
 
+import static com.sym.constants.SentinelResourceConstants.DEFAULT_NAME;
+
 /**
  * @author shenyanming
  * Created on 2020/7/11 17:36
@@ -26,11 +28,11 @@ public class UserController {
     private String serviceName;
 
     @GetMapping("/user/{user_id}")
-    @SentinelResource(value = "user",
+    @SentinelResource(value = DEFAULT_NAME,
             blockHandler = "blockHandlerMethod", fallback = "fallbackMethod",
             exceptionsToIgnore = {IllegalArgumentException.class})
     public UserBean getOne(@PathVariable("user_id") Integer userId){
-        String url = "http://" + serviceName + "/provider/user/error";
+        String url = "http://" + serviceName + "/provider/user/" + userId;
         return restTemplate.getForObject(url, UserBean.class);
     }
 

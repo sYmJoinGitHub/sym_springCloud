@@ -3,6 +3,7 @@ package com.sym;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.cloud.client.circuitbreaker.EnableCircuitBreaker;
 
 /**
  * Sentinel的官方文档：https://github.com/alibaba/Sentinel/wiki/%E4%BB%8B%E7%BB%8D,
@@ -12,6 +13,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
  * @date 2020/5/24 22:44.
  */
 @SpringBootApplication
+@EnableCircuitBreaker
 @Slf4j
 public class SentinelApplication {
     public static void main(String[] args) {
