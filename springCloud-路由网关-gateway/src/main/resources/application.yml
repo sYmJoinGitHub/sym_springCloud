@@ -11,9 +11,9 @@ spring:
     gateway:
       routes:
         - id: test #自定义的id标识, 保持唯一性
-          uri: http://www.baidu.com # 目标服务地址, 配置为服务名称, 依靠注册中心拉取IP地址
-          predicates: # 路由判断条件, 使用的是JDK自带的Predicate断言类. 这边是当访问路径为/baidu时跳转到百度首页
-            - Path=/baidu
+          uri: https://github.com/shenyanming95 # 目标服务地址, 配置为服务名称, 依靠注册中心拉取IP地址
+          predicates: # 路由判断条件, 使用的是JDK自带的Predicate断言类. 这边是当访问路径为/github时转发
+            - Path=/github
         - id: prod
           uri: lb://shenyanming-user-provider
           predicates:
