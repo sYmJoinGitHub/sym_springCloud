@@ -3,6 +3,7 @@ package com.sym.filter;
 import com.netflix.zuul.ZuulFilter;
 import com.netflix.zuul.context.RequestContext;
 import com.netflix.zuul.exception.ZuulException;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.cloud.netflix.zuul.util.RequestUtils;
 import org.springframework.stereotype.Component;
 
@@ -16,13 +17,12 @@ import org.springframework.stereotype.Component;
  * Created by 沈燕明 on 2019/3/12.
  */
 @Component
+@Slf4j
 public class PostFilter extends ZuulFilter {
 
     /**
      * filterType()返回的值表示此过滤器是什么类型的过滤器
      * post过滤器在请求转发给微服务执行后被调用
-     *
-     * @return
      */
     @Override
     public String filterType() {
@@ -31,8 +31,6 @@ public class PostFilter extends ZuulFilter {
 
     /**
      * 定义过滤器的执行顺序，数值越小优先级越高，越快执行
-     *
-     * @return
      */
     @Override
     public int filterOrder() {
@@ -42,8 +40,6 @@ public class PostFilter extends ZuulFilter {
     /**
      * 判断此过滤器是否要执行，若返回true则过滤器会执行(意味着执行run()方法)
      * 否则过滤器不执行，就不会执行run()方法
-     *
-     * @return
      */
     @Override
     public boolean shouldFilter() {
@@ -53,9 +49,6 @@ public class PostFilter extends ZuulFilter {
 
     /**
      * 过滤器执行的逻辑
-     *
-     * @return
-     * @throws ZuulException
      */
     @Override
     public Object run() throws ZuulException {
@@ -63,7 +56,7 @@ public class PostFilter extends ZuulFilter {
         RequestContext ctx = RequestContext.getCurrentContext();
         // RequestUtils获取当前request几个状态的工具类
         RequestUtils.isDispatcherServletRequest();
-        System.err.println("post过滤器在此执行了....");
+        log.info("post过滤器在此执行了....");
         return null;
     }
 }

@@ -1,10 +1,14 @@
 server:
   port: 12580
 
+## 微服务名
+service:
+  name: shenyanming-user-provider
+
 ## zuul需要作为一个微服务注册到Eureka中
 spring:
   application:
-    name: gateway-zuul
+    name: shenyanmming-zuul-service
 eureka:
   instance:
     prefer-ip-address: true
@@ -16,10 +20,10 @@ eureka:
 zuul:
   # routes是配置路由规则,它是一个Map类型,配置规则：<自定义>.serviceId => 服务名称，<自定义>.path => 访问映射
   routes:
-    sym.serviceId: springCloud-provider
+    sym.serviceId: ${service.name}
     sym.path: /sym/**
-    sxq.serviceId: springCloud-provider
-    sxq.path: /sxq/**
+    sxq.serviceId: github
+    sxq.path: https://github.com/shenyanming95
   # 配置不映射的服务ID（服务ID即注册在Eureka上面的服务名称）
   ignored-services: "*"
   # 映射前缀
